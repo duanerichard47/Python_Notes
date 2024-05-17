@@ -1,0 +1,52 @@
+Chapter 3
+Lists [] are dynamic, meaning you can build a list then add and remove elements from it as your program runs its course.
+Create list: variable = []
+Create numerical list: variable=list(range(1,6))
+Modify Elements in a List :  
+motorcycles = ['honda', 'yamaha', 'suzuki'],  motorcycles[0] = 'ducati', print(motorcycles), >>>output: 'ducati', 'yamaha', 'suzuki'
+Adding Elements to a List: 
+.Append() method Adds to the end , motorcyles.append(‘toyota’), print(motorcycles), >>>output: 'ducati', 'yamaha', 'suzuki', ‘toyota’
+Inserting Elements to a List: 
+.Insert() method adds at specific index location : motorcycles.insert(2,’nissan’), print(motorcycles),>>>output: 'ducati', 'yamaha', ‘nissan’, 'suzuki', ‘toyota’. Note: 2 arguments always
+Removing Elements from a List: 
+Using del Statement. del motorcycles[1], print(motorcycles),>>>output: 'ducati', ‘nissan’, 'suzuki', ‘toyota’ . Works like method change object permanently doesn’t return value
+Removing Elements from a List: 
+.pop() method removes the last item in a list, but it lets you work with that item after removing it.Also pop(0) removes value at specific index. Odd as method because returns a value.
+Using pop() Method: popped_motorcycle = motorcycles.pop(), print(motorcycles) print(popped_motorcycle)>>>output: 'ducati', ‘nissan’, 'suzuki', >>>‘toyota’
+Removing Element from a List: 
+.remove() method removes by value. Motorcycles.remove(‘ducati’)     Note: only the 1st occurrence removed can put it in loop to remove all	 
+Sorting Elements in list Alphabetically: 
+.sort() method changes the order of a list permanently mutates: motorcycles.sort(). Does not return a value returns None. Can reverse order:  .sort(reverse=True)
+Sorting Elements in list Alphabetically: 
+	Sorted() function: maintain the original order of a list use. Result is a New space in memory. Example: print(sorted(motorcyles)). Can reverse order x=sorted(motorcyles, reverse=True)
+Sorting Element in reverse order: 
+.reverse() method reverses the order of list permanently mutates but does not sort backward alphabetically. Motorcycles.reverse() Does not return a value returns None.
+Reversed() function: maintain the original order of a list use. Result is a New space in memory. Quirk is does not return as list or same datatype. Have to specify it again by list(x)
+	Print(list(reversed(motorcycles)))
+Method	Description
+1	append()	Used for adding elements to the end of the List. 
+2	copy()	It returns a shallow copy of a list  .  list[:]
+3	clear()	This method is used for removing all items from the list. Del list[:]
+4	count()	These methods count the elements(# of a specific value).
+5	extend()	Adds each element of an iterable to the end of the List
+6	index()	Returns the lowest index where the element appears.  print(list.index('executive')) output 2
+7	insert()	Inserts a given element at a given index in a list. 
+8	pop()	Removes and returns the last value from the List or the given index value.
+9	remove()	Removes a given object from the List. 
+10	reverse()	Reverses objects of the List in place.
+11	sort()	Sort a List in ascending, descending, or user-defined order
+12	min()	Calculates the minimum of all the elements of the List
+13	max()	Calculates the maximum of all the elements of the List
+
+Finding length of list:  len(motorcyles). Returns an integer.
+Extra: example of negative index. 0=-3,1=-2, 2=-1, think of it left of zero the counting wraps around
+All functions builtin  python - print(dir(__builtins__)) or in python interpreter >>> import builtins >>> dir(builtins)
+All methods builtin python – can only print for specific class. Print(dir(list))
+print(id(x)) – prints memory address
+? methods builtin python change object permanently(may or may not return a value,if no return value can’t assign it a variable)  while functions don’t ? Methods created on own or from library can behave differently including returning value and not changing object permanently
+Python list() Function Syntax
+Syntax: list(iterable)
+
+Parameter:
+
+iterable:  an object that could be a sequence (string, tuples) or collection (set, dictionary) ,list, range, or any iterator object.
