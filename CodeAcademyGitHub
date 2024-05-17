@@ -1,0 +1,136 @@
+Codeacademy GitHub:
+Repository – contains a collection of files  and info about a project
+When repo created a main branch is created. User can create separate branches.
+Pull request – Allows owner of main branch to examine separate branch code and decide if want to combine it or not.
+Github – is a website and cloud-based service that hosts Git repositories. Graphical user interface
+Git is the local repository on the  users computer. Git account links to github account
+First create new repo on github or find one that want to connect to.
+Download git to your home computer.
+Make folder to hold repo on home computer. Right click show more option gitbash
+Run
+
+  git config --global user.email you@example.com  =#when installing git. Will show on all commits. Doesn’t have to match whats on github
+  git config --global user.name "Your Name" =#when installing git. Will show on all commits. Doesn’t have to match whats on github
+To retrieve repo from github to put on local computer git application.  Clone it from github ‘ Code> https,ssh,GitHub CLI [copy and past] > On termimal go to folder  > type: git clone ………..paste……….
+Create new branch. Do it in Git on local computer . type: git checkout -b new_branch_name. Creates branch and switches to it with same command.(git branch new_branch_name creates new branch, git checkout branch_name switches to it)
+To open a file in command line in linux. Type: nano filename.py,  Create new file same way . Type ‘ls’ to see all files in folder
+Add new file to repository or update a file type git add file-names or git add .   Now new or modified files will be in a kind of escrow(--staged). View escrow by typing: git status.  Note new files not added yet will be in status untracked. They are located in the same folder included with tracked files but not attached any of the branches in the local git repository. (will give you instruction how to unstage files)
+Add files or changes to local Git branch type git commit -m  “message goes here”
+ Note: git status will say “ [Current branch name in git on local computer(if in main will say ‘On branch main’] Your branch is ahead of ‘origin/main’ by 1 commit”. (will give you instruction to use ‘git push’ to publish your local commits)
+To send to GitHub type: git push  -–set-upstream origin “current branch goes here”  Note may ask git hub account user name and password for username for location you want to send new branch
+Check on GitHub should see new branch appear.And should be able to see new files under it.
+To merge with main create pull request. Allows other team members to approve changes before merge.
+Clik on Pull requests>select brance  base:main --- select source branch from git in drop down here (just follow the arrows) >>> create pull request>>Write note describing now edition.>> can Add reviews by e-mail or GitHub account>> click create pull request again.
+Nano CTR O then enter, CTR x
+
+
+Working from file on local computer first. Want to add files on local computer to be a git repository(git project) on local computer and github:
+In bash go inside folder that you want to make into a repo. If starting with a single file create a folder to put that file in.
+Type ‘git init’
+Git project can be thought of as having three parts:
+Git init ->
+A Working Directory: where you’ll be doing all the work: creating, editing, deleting and organizing files
+Git add ->
+A Staging Area: where you’ll list changes you make to the working directory
+Git commit ->
+A Repository: where Git permanently stores those changes as different versions of the project
+
+
+Git diff filename = shows difference in file between working directory and staging area.
+Git log = shows commits to local git repo
+
+git init creates a new Git repository
+git status inspects the contents of the working directory and staging area
+git add adds files from the working directory to the staging area
+git diff shows the difference between the working directory and the staging area if not that then between working directory and  committed file
+git commit permanently stores file changes from the staging area in the repository
+git log shows a list of all previous commits
+
+git show HEAD – shows last commit from git  log with the code that was removed and added
+git checkout HEAD filename (git checkout –- filename)– restore the file in working directory to  what it is when made last commit
+git reset HEAD filename  (git reset –-- filename)  -  removes the file from staging area. Resets file to be same as last commit. It does not discard file changes from working directory
+git reset (1st 7 characters of the SHA from one of pass commits) – erases the commits that come before it(most recent is 1st listed). HEAD now set to this commit. Local repo changed to code from that commit g. Note: git reflog keeps list of commits permanently also so if accidently reset can find the deleted commits there. (if want to change working directory too run another command git checkout)
+
+git checkout HEAD filename: Discards changes in the working directory.Overwrites code from local repo to working directory. (git checkout -– filename)
+git reset HEAD filename: Unstages file changes in the staging area.Overwrites code from local repo to staging area(which will read as unchanged so now nothing in staged area). (git reset –-- filename)
+git reset commit_SHA: Resets to a previous commit in your commit history.Overwrites code from local repo to local repo.
+
+Git stash  filename  &  git stash pop filename – saves file in temporary and retrieves it from temporary area. Example if going to use git checkout HEAD but don’t want to lose code changes in working directory
+here are other ways you can use git log in order to view recorded changes. Here are a few examples:
+
+git log --oneline shows the list of commits in one line format.
+
+git log -S "keyword" displays a list of commits where the number of occurrences of the keyword changes within at least one file via addition, deletion, or modification. In the screenshot below, we use git log -S "Add" to find any commits where the number of occurrences of “Add” within a file changes.
+
+git log --oneline --graph - --graph = Displays a visual representation of how the branches and commits were created in order to help you make sense of your repository history. When used alone, the description can be very lengthy, so you can combine the command with --oneline in order to shorten the description.
+
+
+git commit --amend  = Basically another commit but want to keep all commits specific,clean, and succinct. This will overwrite the last commit but have the same SHA # and info, etc. Will have to update message but if git commit --amend --no-edit it will keep the same message.
+-h = help switch/flag
+
+
+
+git alias commands = Basically a variable that you can use instead of a command or string of commands. Ex. git config --global alias.glop "log --pretty=format:"%h %s" --graph". Can write
+'git config glop'
+
+
+
+
+GitHub offers two authentication options, HTTPS and SSH, to keep your work secure. This is a security measure that prevents anyone who isn’t authorized from making changes to your GitHub repository. In this article, we will use HTTPS.
+website about personal token: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic
+To authenticate yourself in the terminal, you will need to generate a Personal Access Token on GitHub. Navigate to GitHub’s article on creating a personal access token and follow the instructions for creating a classic token. Be sure to check the box that grants the token repo scope — this will allow you to write to the repository from the terminal on your machine.
+Cd .. = go one folder up
+create a new repository on the command line
+echo "# git_practice" >> README.md  # can do this in windows right click add new text document save it as ‘README.txt’
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/duanerichard47/git_practice.git
+git push -u origin main
+
+
+push an existing repository from the command line
+git remote add origin https://github.com/duanerichard47/git_practice.git  # adds a remote repository named "origin" with the URL of your GitHub repository. (origin is the remote github repo. Most code is cloned from github repo) Origin is working like a variable. This repo is linked to one remote repo at a time. This command links this local repo to this remote repo.
+git branch -M main  #This renames the default branch from master to main. This step is optional but recommended as many projects are moving away from using "master" due to its historical connotations.
+git push -u origin main # This pushes your committed changes from local repo to the remote(origin) repository (GitHub) and sets the upstream branch to "main", so in the future, you can simply use git push without specifying the remote and branch. Overwrites origin main branch with local main branch. 
+
+Git remote -v = shows the remote  repo this local repo is linked toc
+Note each communication between local and remote the remote verifies key in or on transmission from local matches key stored in remote(GitHub). Git stores ssh in something called ssh agent.
+Note – when creating repo on github don’t initialize wih Readme, gitignore or liscense. Leave boxes unchecked. Unless the local copy has no files at all. Will be confused when try to push anything from local repo because  they will have different SHA numbers Unique ID #’s for HEAD.
+
+Git branch = tells u what branch you are on
+Clone = download
+
+Git branch new_brach_name   = creates a new branch with given name
+Git checkout branc_name = switch to that branch
+Git merge branch_name = sends code from 2ndry branch to main/master branch. Command ran from main/master branch so have to switch to it first.
+
+Merge conflict = if main/master branch has changed at time after 2ndry branch was created you will get a merch conflict error when run the merge command. Will be prompted with file with markings and both versions of code. Decide on one and erase all markings and version of code you do not want. Run git add and git commit again.
+
+git branch -d branch_name = deletes branch. Frequently after merge 2ndry branch gets deleted. git branch -D  branch_name if has not been merged with another file yet. Delete from main/master branch
+
+git clone remote_location clone_name
+In this command:
+remote_location tells Git where to go to find the remote. This could be a web address, or a filepath, such as:
+/Users/teachers/Documents/some-remote
+clone_name is the name you give to the directory in which Git will clone the repository.
+The cloned copy is your complete copy of the repo on local computer including main branch. An entire independent git folder which is why have to cd to go in.	
+Git fetch= updates a cloned local repo from its original  remote repo in case there were any changes on the remote repo. This command will not merge changes from the remote into your local repository. It brings those changes onto what’s called a remote branch. Like a staging area
+
+git merge origin/master - This merges code from remote (origin master/main) to local repo (local master/main) . Completes the task of git fetch
+git pull – combines git fetch and git merge origin/master into one command
+git push origin <your_branch_name> = will push your branch up to the remote, origin. From there, Sally can review your branch and merge your work into the master branch, making it part of the definitive project version.
+A remote is a Git repository that lives outside your Git project folder. Remotes can live on the web, on a shared network or even in a separate folder on your local computer. Note we are not overwriting remote branch main/master we are just sending a branch to project leader. The project leader can merge or do a pull request if they want. 
+
+git clone: Creates a local copy of a remote.
+git remote -v: Lists a Git project’s remotes.
+git fetch: Fetches work from the remote into the local copy.
+git merge origin/master: Merges origin/master into your local branch.
+git push origin <branch_name>: Pushes a local branch to the origin remote.
+Pwd =shows current directory
+Code . – opens visual studio code
+Send invite= from github repo. >Settings(for repo) > Collabotators> add people > search for their github name
+
+Git rebase – merge to main but want to keep the commit history of branchs. Creates a linear commit history.
+.gitignore file – names of files or folders included in it will be ignored and not staged or committed to main branch in local repo or remote
