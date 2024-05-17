@@ -1,0 +1,36 @@
+Chapter 4
+Looping thru list:  Use a for loop:   for item in list:
+Range function : 
+Range function in for loop:   
+for value in range(1,5): ,  prints 1-4, for value in range(6): prints 0-5., 
+Step size:
+ Can pass a third argument called a step size. Example. List(range(2,11,2) makes list [2,4,6,8,10]
+List () function:   
+Can use it to make a numbers list example numbers=list(range(1,6))
+numbers = list(range(1,10))  output print(numbers)=[1,2,3,4,5,6,7,8,9]
+Note: numbers = print(range(1,10))  output print(numbers) = range(1,10) # range returns an irritable like list,set,tuple,dict, etc, but is not a list.
+Number list functions: digits=[1,2,3,4,5]  
+min(digits)= output 1, 
+max(digits)= output 5. 
+Sum(digits) =output 15
+Slicing a List: specify the index of the first and last elements you want to work with. Stops one item before the second index you specify. 
+	Example players = [‘a’,’b’,’c’,’d’,’e’], print(players[0:3])  output [‘a’,’b’,’c’]
+	Print(players[:4])starts at beginning of list to one item before index     print(players[2:] starts from index to end of list
+	Also print(players[-3])  output [’c’,’d’,’e’].
+Copying a list: makes a second copy of list. A different memory location. Use new_name = players[:]  Note new_name = players just assigns two name to same list same memory location test with id()
+Tuples data type: Just like a list but values are immutable. Use () instead of [].  Dimensions=(200,50), my_t =(3,) If one element include trailing comma. Immutable but can overwrite assign new value to variable dimensions=(400,50)
+)
+List Comprehensions: 
+squares = [value**2 for value in range(1,11)], print(squares), output [1,4,9,16,25,36,49,64,81,100]
+current_users_lower = [user.lower() for user in current_users], output [list all lower case values]  >> new_variable=[body_of_for_loop, for_loop]
+Enumerate() in Python
+
+Often, when dealing with iterators, we also need to keep a count of iterations. Python eases the programmers’ task by providing a built-in function enumerate() for this task. The enumerate () method adds a counter to an iterable and returns it in the form of an enumerating object. This enumerated object can then be used directly for loops or converted into a list of tuples using the list() function.
+
+Syntax: enumerate(iterable, start=0)
+
+Parameters:
+
+Iterable: any object that supports iteration
+Start: the index value from which the counter is to be started, by default it is 0
+Return: Returns an iterator with index and element pairs from the original iterable
